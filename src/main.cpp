@@ -5,34 +5,11 @@
 
 using namespace std;
 
-string getComparisonResult(string wordInFocus, string targetWord);
-
 int main() {
-    string userInput;
-    string targetString = "cat";
-    string awaitingResult = "start";
-    while (awaitingResult != "alphabetically equal to") {
-        cout << "Enter a word to see if you are alphabetically above the reference word: \n";
-        getline(cin, userInput);
-        awaitingResult = getComparisonResult(userInput, targetString);
-        cout << "Your word - " << userInput << " is " << awaitingResult + " the target string." << endl;
-    }
-    cout << "Hurray! You made it!" << endl;
+    vector <int> firstVect(1);
+    int firstArray[5] = { 2, 5, 6, 7, 1 };
+    firstVect.insert(firstVect.begin(), firstArray, firstArray+4);
+    cout << "firstVect_3: " << firstVect.at(3) << endl;
+    cout << "firstVect_size: " << firstVect.size() << endl;
     return 0;
-}
-
-string getComparisonResult(string wordInFocus, string targetWord) {
-    const int comparisonScore = wordInFocus.compare(targetWord);
-    cout << "comparisonScore: \n" << comparisonScore << endl;
-    string compareResult;
-    if (comparisonScore < 0) {
-       compareResult = "alphabetically lower";
-    } else if (comparisonScore == 0) {
-        compareResult = "alphabetically equal to";
-    } else if (comparisonScore > 0) {
-        compareResult = "alphabetically greater than";
-    } else {
-        compareResult = "uncomparable to";
-    }
-    return compareResult;
 }
