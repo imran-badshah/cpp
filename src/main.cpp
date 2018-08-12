@@ -11,5 +11,8 @@ int main() {
     firstVect.insert(firstVect.begin(), firstArray, firstArray+4);
     cout << "firstVect_3: " << firstVect.at(3) << endl;
     cout << "firstVect_size: " << firstVect.size() << endl;
+
+    int* vectNoPtr = firstArray;
+    cout << "using array since no vec ptr conversion available: " << *++vectNoPtr << endl;
     return 0;
 }
