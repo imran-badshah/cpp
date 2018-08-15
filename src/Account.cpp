@@ -45,4 +45,8 @@ string Account::getHolderLastName() {
     return this->holderName.getLastName();
 };
 
+string Account::getAccountType() {
+    return "Account";
+}
+
 int Account::numOfAccounts = 0;

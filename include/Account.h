@@ -21,6 +21,7 @@ class Account {
         string getUserName();
         string getEmail();
         string getHolderLastName();
+        string getAccountType();
     Account();    
     Account(string name, string userName, string email, HolderName holderName);    
     ~Account();    

@@ -16,3 +16,7 @@ void SharedAccount::setSharedHolderName(HolderName sharedHolderName) {
 string SharedAccount::getSharedHolderLastName() {
     return this->sharedHolderName.getLastName();
 };
+
+string SharedAccount::getAccountType() {
+    return "Shared account";
+}

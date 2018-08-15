@@ -9,6 +9,7 @@ class SharedAccount : public Account {
     public:
         void setSharedHolderName(HolderName sharedHolderName);
         string getSharedHolderLastName();
+        string getAccountType();
     SharedAccount(string name, string userName, string email, HolderName holderName, HolderName sharedHolderName);
     SharedAccount() : Account(){};
     ~SharedAccount();

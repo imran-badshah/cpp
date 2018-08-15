@@ -9,17 +9,23 @@
 
 using namespace std;
 
+void printAccountDetails(Account account, int id);
+
 int main() {
+    int id = 0;
     Account youtube = Account("youtube", "user1", "email1@gmail.com", HolderName("user1", "", "test"));
-    cout << "Account 1: " << youtube.getName() << " by " << youtube.getHolderLastName() << endl;
-    cout << "Number of accounts: " << Account::getNumberOfAccounts() << endl;
+    printAccountDetails(youtube, ++id);
     Account incomplete = Account();
-    cout << "Account 2: " << incomplete.getName() << " by " << incomplete.getHolderLastName() << endl;
-    cout << "Number of accounts: " << Account::getNumberOfAccounts() << endl;
+    printAccountDetails(incomplete, ++id);
 
     SharedAccount sharedYoutube = SharedAccount("youtube", "user2", "email2@gmail.com", HolderName("user2", "will", "share"), HolderName("sharee", "shares", "withUser2"));
-    cout << "Account 3: " << sharedYoutube.getName() << " by " << sharedYoutube.getHolderLastName() << endl;
-    cout << "Account 3 :: shared: " << sharedYoutube.getSharedHolderLastName() << endl;
-    cout << "Number of accounts: " << Account::getNumberOfAccounts() << endl;
+    printAccountDetails(sharedYoutube, ++id);
+    cout << sharedYoutube.getAccountType() << " 3: shared: " << sharedYoutube.getSharedHolderLastName() << endl;
     return 0;
 }
+
+
+void printAccountDetails(Account account, int id) {
+    cout << account.getAccountType() << " " << id << ": " << account.getName() << " by " << account.getHolderLastName() << endl;
+    cout << "Number of accounts: " << Account::getNumberOfAccounts() << endl;
+};
